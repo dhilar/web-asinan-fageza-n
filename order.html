@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Asinan Segar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Asinan Segar</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#form">Form Pemesanan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="form">
+        <section class="order-section">
+            <h1>Form Pemesanan</h1>
+            <p>Isi formulir di bawah ini untuk memesan asinan favorit Anda.</p>
+            <form id="orderForm">
+                <!-- Nama -->
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+
+                <!-- Alamat -->
+                <label for="address">Alamat Pengiriman</label>
+                <textarea id="address" name="address" rows="3" placeholder="Masukkan alamat lengkap Anda" required></textarea>
+
+                <!-- Jarak Pengiriman -->
+                <label for="distance">Jarak Pengiriman (km)</label>
+                    <select id="distance" name="distance" required>
+                        <option value="16">0-2 km (Rp 16,000/porsi)</option>
+                        <option value="20">2-3 km (Rp 20,000/porsi)</option>
+                        <option value="25">3-5 km (Rp 25,000/porsi)</option>
+                        <option value="16_fixed">Semua Jarak (Rp 16,000/porsi - Promo)</option>
+                    </select>
+
+
+                <!-- Produk -->
+                <label for="product">Pilih Produk</label>
+                <div class="product-grid">
+                    <!-- Asinan Sayur -->
+                    <div class="product-item">
+                        <img src="images/asinan5.jpg" alt="Asinan Sayur">
+                        <p>Asinan Sayur</p>
+                        <div class="quantity">
+                            <button type="button" onclick="updateQuantity('sayur', -1)">-</button>
+                            <input type="number" id="qtySayur" name="qtySayur" value="0" readonly>
+                            <button type="button" onclick="updateQuantity('sayur', 1)">+</button>
+                        </div>
+                    </div>
+                    <!-- Asinan Buah -->
+                    <div class="product-item">
+                        <img src="images/asinan6.jpg" alt="Asinan Buah">
+                        <p>Asinan Buah</p>
+                        <div class="quantity">
+                            <button type="button" onclick="updateQuantity('buah', -1)">-</button>
+                            <input type="number" id="qtyBuah" name="qtyBuah" value="0" readonly>
+                            <button type="button" onclick="updateQuantity('buah', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catatan -->
+                <label for="note">Catatan</label>
+                <textarea id="note" name="note" rows="3" placeholder="Tambahkan catatan opsional"></textarea>
+
+                <!-- Submit -->
+                <button type="submit">Pesan Sekarang</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Asinan Segar. All rights reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
